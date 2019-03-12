@@ -2,6 +2,13 @@ var express = require("express");
 var socket = require("socket.io");
 var mysql = require("mysql");
 
+express.get('/', (req, res) => {
+  res.status(200).send('Hello, world!').end();
+});
+
+var port= process.env.PORT || 8080;
+
+
 //MYSQL setup
 /*
 var mysql      = require('mysql');
@@ -30,7 +37,7 @@ connection.end();
 */
 // APP setup
 var app= express();
-var server = app.listen(4000,function(){
+var server = app.listen(port,function(){
   console.log("listening to requests on port 4000");
 })
 
